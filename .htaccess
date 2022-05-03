@@ -1,0 +1,2 @@
+AddType application/x-httpd-php .html 
+php_value output_buffering 108000
