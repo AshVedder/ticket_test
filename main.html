@@ -1,0 +1,48 @@
+<html>
+<body>
+  <form method = "POST" name="form1">
+        <?php
+        $date = date('m/d/Y');
+        $auditor = $_POST['auditor'];
+        $rorigin = $_POST['rorigin'];
+        ?>
+        Customer Name<br>
+        <input type="text" name="customername" size="10" value="<?php if(isset($_POST['customername'])){ echo $_POST['customername']; } ?>"><p>
+        Ticket ID<br>
+        <input type="text" name="ticketid" size="10" value="<?php if(isset($_POST['ticketid'])){ echo $_POST['ticketid']; } ?>"><p>
+        Auditor<p>
+        <select name="auditor" value=true>
+               <option <?php if (isset($auditor) && $auditor=="Juan Correa") echo "selected";?>>Juan Correa</option>
+               <option <?php if (isset($auditor) && $auditor=="Ash Vedder") echo "selected";?>>Ash Vedder</option>
+               </select><p>
+        Request Origin<p>
+        <select name="rorigin" value= "<?php if(isset($_POST['rorigin'])){ echo $_POST['rorigin']; } ?>">
+               <option <?php if (isset($rorigin) && $rorigin=="Professional") echo "selected";?>>Professional</option>
+               <option <?php if (isset($rorigin) && $rorigin=="Customer") echo "selected";?>>Customer</option>
+               </select><p>
+        Category<br>
+        <input type="text" name="category" size="10" value="<?php if(isset($_POST['category'])){ echo $_POST['category']; } ?>" ><p>
+        Sub-Category<br>
+        <input type="text" name="subcategory" size="10" value="<?php if(isset($_POST['subcategory'])){ echo $_POST['subcategory']; } ?>"><p>
+        Group<br>
+        <input type="text" name="group" size="10" value="<?php if(isset($_POST['group'])){ echo $_POST['group']; } ?>"><p>
+        Region<br>
+        <input type="text" name="region" size="10" value="<?php if(isset($_POST['region'])){ echo $_POST['region']; } ?>"><p>
+        Country<br>
+        <input type="text" name="country" size="10" value="<?php if(isset($_POST['country'])){ echo $_POST['country']; } ?>"><p>
+        Amount of Associated Tickets (If Applicable)<br>
+        <input type="number" name="aticketsn" size="2" min="0" max="99" value="<?php if(isset($_POST['aticketsn'])){ echo $_POST['aticketsn']; } ?>"><p>
+        ID's of Associated Tickets (If Applicable)<br>
+        <input type="textarea" rows="8" cols="30" name="aticketsid" value="<?php if(isset($_POST['aticketsid'])){ echo $_POST['aticketsid']; } ?>"><p>
+        Internal Replies<br>
+        <input type="number" name="ireplies" size="3" min="0" max="100" value="<?php if(isset($_POST['ireplies'])){ echo $_POST['ireplies']; } ?>"><p>
+        External Replies<br>
+        <input type="number" name="ereplies" size="3" min="0" max="100" value="<?php if(isset($_POST['ereplies'])){ echo $_POST['ereplies']; } ?>"><p>
+        Amount of Assignees<br>
+        <input type="number" name="amount" size="3" min="0" max="50" value="<?php if(isset($_POST['amount'])){ echo $_POST['amount']; } ?>">
+  <button>Set</button><p>
+    <?php
+        include ('form.php');
+    ?>
+</body>
+</html>
